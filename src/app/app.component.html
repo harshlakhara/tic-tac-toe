@@ -7,11 +7,19 @@
             @if (id <= 2) { <h2>Enter Player {{id}} Details</h2>
                 } @else {
                 <div class="symbols-container">
-                    <div class="symbol-display">{{player1.name}} <i
-                            [ngClass]="{'fa-regular fa-circle':player1.symbol === 'O','fa-solid fa-xmark':player1.symbol === 'X'}"></i>
+                    <div class="symbol-display">{{player1.name}}
+                        <div class="symbol-box"><i
+                                [ngClass]="{'fa-regular fa-circle':player1.symbol === 'O','fa-solid fa-xmark':player1.symbol === 'X'}"></i>
+                        </div>
                     </div>
-                    <div class="symbol-display">{{player2.name}} <i
-                            [ngClass]="{'fa-regular fa-circle':player2.symbol === 'O','fa-solid fa-xmark':player2.symbol === 'X'}"></i>
+                    <div class="counter">
+                        game starts in
+                        <h2>{{seconds}}s...</h2>
+                    </div>
+                    <div class="symbol-display">{{player2.name}}
+                        <div class="symbol-box"><i
+                                [ngClass]="{'fa-regular fa-circle':player2.symbol === 'O','fa-solid fa-xmark':player2.symbol === 'X'}"></i>
+                        </div>
                     </div>
                 </div>
                 }

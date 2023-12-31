@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { PlayerService } from './player.service';
 import { Player } from './player.model';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { NumericType } from 'mongodb';
 
 @Component({
   selector: 'app-root',
@@ -45,6 +46,7 @@ export class AppComponent {
   id: number = 1;
   player1!: Player;
   player2!: Player;
+  seconds: number = 5;
 
   getRandomSymbol() {
     const arr: ('X' | 'O')[] = ['X', 'O'];
@@ -64,6 +66,13 @@ export class AppComponent {
     }
     this.id++;
     if (this.id == 3) {
+      const interval = setInterval(() => {
+        this.seconds--;
+        if (this.seconds == 0) {
+          clearInterval(interval);
+          alert('Game starts');
+        }
+      }, 1000);
     }
   }
 }

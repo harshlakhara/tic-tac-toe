@@ -50,10 +50,27 @@
       .symbols-container {
         display: flex;
         width: 100%;
+        height: 100%;
+        align-items: center;
         justify-content: space-around;
+        .counter {
+          text-align: center;
+        }
         .symbol-display {
           display: flex;
           flex-direction: column;
+          align-items: center;
+          row-gap: 1rem;
+          .symbol-box {
+            border: 1px solid white;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10rem;
+            width: 10rem;
+            font-size: 7rem;
+          }
         }
       }
     }
