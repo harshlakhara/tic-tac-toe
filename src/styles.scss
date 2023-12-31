@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Russo One", sans-serif;
+  color: white;
+}
+body {
+  background: url("./assets/pattern.jpg"),
+    linear-gradient(to top, black, #302e32);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-blend-mode: multiply;
+}
+
+.d-none {
+  display: none;
+}
