@@ -1,3 +1,4 @@
+@if(gameStarted){
 <div class="main">
     <div class="floating-container">
         <div class="heading">
@@ -49,3 +50,6 @@
         </div>
     </div>
 </div>
+} @else {
+<app-game [playersInfo]="{player1:player1, player2:player2}" />
+}

@@ -4,12 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { PlayerService } from './player.service';
 import { Player } from './player.model';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { NumericType } from 'mongodb';
+import { GameComponent } from './game/game.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [
@@ -40,6 +39,7 @@ import { NumericType } from 'mongodb';
       ]),
     ]),
   ],
+  imports: [CommonModule, RouterOutlet, GameComponent],
 })
 export class AppComponent {
   playerService: PlayerService = inject(PlayerService);
@@ -47,6 +47,7 @@ export class AppComponent {
   player1!: Player;
   player2!: Player;
   seconds: number = 5;
+  gameStarted: boolean = false;
 
   getRandomSymbol() {
     const arr: ('X' | 'O')[] = ['X', 'O'];
@@ -70,7 +71,7 @@ export class AppComponent {
         this.seconds--;
         if (this.seconds == 0) {
           clearInterval(interval);
-          alert('Game starts');
+          this.gameStarted = true;
         }
       }, 1000);
     }

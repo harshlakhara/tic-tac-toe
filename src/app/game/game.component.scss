@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+
+  .game-container {
+    .box-container {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 5rem);
+      grid-template-rows: repeat(3, 5rem);
+      gap: 1rem;
+      .box {
+        border: 1px solid white;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          background-color: #000000;
+        }
+      }
+    }
+  }
+}
